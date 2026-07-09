@@ -35,13 +35,6 @@ export default function Navbar() {
             <span className="font-mono">{xp} XP</span>
             {streak > 0 && <span className="ml-1 text-numeracy">🔥{streak}</span>}
           </div>
-          <button
-            onClick={toggleTheme}
-            aria-label="Toggle color theme"
-            className="rounded-full border border-line p-2 text-ink2 transition-colors hover:text-ink hover:border-numeracy/50"
-          >
-            {theme === 'dark' ? <Sun size={16} /> : <Moon size={16} />}
-          </button>
         </div>
       </div>
       <nav className="flex items-center gap-1 overflow-x-auto border-t border-line/60 px-4 py-1.5 sm:hidden">
