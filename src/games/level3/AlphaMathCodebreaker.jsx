@@ -238,17 +238,17 @@ export default function AlphaMathCodebreaker() {
 
       <Card>
         <ExpressionDisplay chain={question.chain} />
-        <form onSubmit={submitAnswer} className="mt-6 flex gap-3">
+        <form onSubmit={submitAnswer} className="mt-6 flex flex-col gap-3 sm:flex-row">
           <input
             autoFocus
             type="number"
             step="any"
             value={input}
             onChange={(e) => setInput(e.target.value)}
-            className="flex-1 rounded-xl border border-line bg-panel2 px-4 py-3 font-mono text-lg text-ink outline-none focus:border-logic"
+            className="min-w-0 flex-1 rounded-xl border border-line bg-panel2 px-4 py-3 font-mono text-lg text-ink outline-none focus:border-logic"
             placeholder="Your answer"
           />
-          <button type="submit" className="rounded-xl bg-logic px-5 py-3 text-sm font-semibold text-void shadow-glowViolet">
+          <button type="submit" className="w-full shrink-0 rounded-xl bg-logic px-5 py-3 text-sm font-semibold text-void shadow-glowViolet sm:w-auto">
             Submit
           </button>
         </form>
