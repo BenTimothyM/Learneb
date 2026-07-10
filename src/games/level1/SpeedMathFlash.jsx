@@ -7,8 +7,8 @@ import DifficultySelect, { DEFAULT_CHAIN_PRESETS } from '../../components/Diffic
 import { useGame } from '../../context/GameContext.jsx'
 import { generateChain, isCorrectNumeric } from '../../utils/mathGenerators.js'
 
-const STEP_MS = 650
-const CHAIN_OPS = 4 // operations per single question (5 flashed values total)
+const STEP_MS = 1500
+const CHAIN_OPS = 8 // operations per single question (5 flashed values total)
 
 const OP_SYMBOL = { '+': '+', '-': '\u2212', x: '\u00d7', '/': '\u00f7' }
 
@@ -155,17 +155,17 @@ export default function SpeedMathFlash() {
       {phase === 'answer' && (
         <Card className="w-full">
           <p className="font-display text-lg text-ink">Chain complete. What's the final result?</p>
-          <form onSubmit={submitAnswer} className="mt-5 flex gap-3">
+          <form onSubmit={submitAnswer} className="mt-5 flex flex-col gap-3 sm:flex-row">
             <input
               autoFocus
               type="number"
               step="any"
               value={input}
               onChange={(e) => setInput(e.target.value)}
-              className="flex-1 rounded-xl border border-line bg-panel2 px-4 py-3 font-mono text-lg text-ink outline-none focus:border-numeracy"
+              className="min-w-0 flex-1 rounded-xl border border-line bg-panel2 px-4 py-3 font-mono text-lg text-ink outline-none focus:border-numeracy"
               placeholder="Your answer"
             />
-            <button type="submit" className="rounded-xl bg-numeracy px-5 py-3 text-sm font-semibold text-void shadow-glow">
+            <button type="submit" className="w-full shrink-0 rounded-xl bg-numeracy px-5 py-3 text-sm font-semibold text-void shadow-glow sm:w-auto">
               Submit
             </button>
           </form>
