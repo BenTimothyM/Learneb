@@ -7,8 +7,8 @@ import DifficultySelect, { DEFAULT_CHAIN_PRESETS } from '../../components/Diffic
 import { useGame } from '../../context/GameContext.jsx'
 import { generateChain, isCorrectNumeric } from '../../utils/mathGenerators.js'
 
-const STEP_MS = 700
-const CHAIN_OPS = 3 // operations per side per question (keeps dual-channel tracking manageable)
+const STEP_MS = 1500
+const CHAIN_OPS = 4 // operations per side per question (keeps dual-channel tracking manageable)
 
 const OP_SYMBOL = { '+': '+', '-': '\u2212', x: '\u00d7', '/': '\u00f7' }
 
